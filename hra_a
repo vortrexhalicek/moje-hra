@@ -1,0 +1,6 @@
+#include <iostream>
+
+int main() {
+    std::cout << "toto je muj prvni tydenni update!" << std::endl;
+    return 0;
+}
