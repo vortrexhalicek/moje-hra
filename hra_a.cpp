@@ -132,3 +132,42 @@ void village(Player &p) {
     else {
         cout << "Nedostatek zlata!\n";
     }
+    }
+
+// CLASS CHOICE
+Player chooseClass() {
+    while (true) {
+        cout << "\nVyber classu:\n1) Paladin\n2) Lovec\n3) Mag\n4) Warlock\n";
+        int c;
+        cin >> c;
+
+        Player p;
+
+        if (c == 1) {
+            p = {"Paladin", 6,6,5,5,5,1,0,3};
+        } else if (c == 2) {
+            p = {"Lovec",5,5,4,4,5,1,0,4};
+        } else if (c == 3) {
+            p = {"Mag",4,4,7,7,5,1,0,2};
+        } else if (c == 4) {
+            p = {"Warlock",5,5,6,6,5,1,0,3};
+        }
+
+        printStats(p);
+        cout << "Potvrdit? (1=ano, 0=ne)\n";
+        int confirm;
+        cin >> confirm;
+
+        if (confirm == 1) return p;
+    }
+}
+
+// ================= MAIN =================
+int main() {
+    srand(time(0));
+
+    Player player = chooseClass();
+
+    // MONSTRA
+    Monster m1 = {"Goblin", 3, 1, 3, true};
+    Monster m2 = {"Troll", 5, 2, 5, true};
